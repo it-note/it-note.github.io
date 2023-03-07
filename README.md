@@ -1,6 +1,6 @@
-# Jiyoen Kim
-
 <img src="https://github.com/it-note/it-note.github.io/blob/main/resources/yao.gif?raw=true" width="300px">
+
+# Jiyeon Kim
 
 - **I am**
   - Java Developer
