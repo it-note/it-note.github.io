@@ -50,6 +50,7 @@
   - [Hayato sumino](https://hayatosum.com/)
   - [Seongjin Cho](https://www.youtube.com/results?search_query=sungjin+cho)
 <br>
+
 ---
 
 - **Persnal Info**
