@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+body {
+    background: no-repeat url("https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg");
+    background-size: auto 130vh;
+    background-position: center;
+}
+
+#filter {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+    color: whitesmoke;
+    display: none;
+    text-align: center;
+}
+
+.timer {
+    padding-top: 30vh;
+}
+
+.timer #time {
+    font-size: 7em;
+}
+
+.todo-form,
+.todo-text {
+    margin-top: 40px;
+}
+
+form {
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+}
+
+form>h1 {
+    color: whitesmoke;
+    font-size: 3em;
+    padding: 40vh 0 20px 0;
+}
+
+form>input[type="text"] {
+    color: whitesmoke;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 2em;
+    text-align: center;
+
+    background: none;
+    caret-color: whitesmoke;
+
+    width: 90%;
+    outline: none;
+    padding: 10px;
+    border: none;
+    border-bottom: solid 3px whitesmoke;
+}
+
+form>button {
+    color: whitesmoke;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: medium;
+
+    height: 50px;
+    padding: 0 25px;
+
+    border-radius: 25px;
+    border: solid 1px whitesmoke;
+    background: rgba(0, 0, 0, 0.3);
+    margin-top: 40px;
+}
+
+form>button:hover {
+    cursor: pointer;
+    background: 0 0;
+}
+
+h2 {
+    margin: 20px 0;
+}
+
+.todo-text>span {
+    font-size: 2em;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+.list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    margin: auto;
+    gap: 10px;
+}
+
+.list span {
+    font-size: 2em;
+}
+
+.list img, .list button>img {
+    width: 30px;
+    height: 30px;
+}
+
+.list button {
+    border: none;
+    background: none;
+}
+
+.list #check-img:hover,
+.list>button:hover {
+    cursor: pointer;
+}
+
+.list input[type="checkbox"]:checked ~ span {
+    text-decoration: line-through;
+}
+
+.whether {
+    float: right;
+    width: fit-content;
+    height: 100px;
+    z-index: 1;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.block>img {
+    width: 60px;
+    height: 60px;
+}
+
+.block>p {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+@media screen and (width > 200vh) {
+    body {
+        background-size: 130% auto;
+    }
+}
+
+/**/

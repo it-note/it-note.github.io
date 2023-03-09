@@ -97,7 +97,7 @@ addProject(sample, "frontend", "cover", "center");
 */
 
 const momentum = new Project(
-    "https://bonni-e.github.io/momentum/",
+    "/momentum",
     "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg",
     "Momentum",
     "Live Clock and Today's To do",
