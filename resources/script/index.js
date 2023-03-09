@@ -82,6 +82,11 @@ function addProject(project, targetContainer, imageSize, imagePosition) {
     container.append(article);
 }
 
+const address = document.querySelector("address");
+const now = new Date();
+now.toLocaleString("ko-KR");
+address.innerText = `copyrightⓒ ${now.getFullYear()} All rights reserved by Jiyeon Kim.`;
+
 // Projects 
 /*
 const sample = new Project(
