@@ -52,6 +52,8 @@ section::-webkit-scrollbar {
     gap: 10px;
 }
 
+.projects:hover {}
+
 .interests {
     gap: 10px;
 }
@@ -152,10 +154,24 @@ section::-webkit-scrollbar {
     background-color: #f797c7;
 }
 
-h1 {
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
     border-bottom: solid 3px whitesmoke;
     padding: 10px 0;
-    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header.mobile {
+    display: none;
+}
+
+header>.tag {
+    display: none;
+    color: whitesmoke;
+    padding: 0 5px;
+    background-color: #f797c7;
 }
 
 h4 {
@@ -170,6 +186,7 @@ li {
     padding: 5px 0;
     font-size: 0.9em;
 }
+
 
 footer {
     display: flex;
@@ -194,6 +211,24 @@ address {
 }
 
 @media screen and (max-width : 760px) {
+
+    header.mobile {
+        display: flex;
+        position: fixed;
+        z-index: 1;
+        width: 90%;
+        padding: 20px 30px;
+        margin-bottom: 20px;
+        background-color: white;
+    }
+
+    header.web {
+        display: none;
+    }
+
+    .container {
+        padding-top: 100px;
+    }
 
     .container,
     .contents {
@@ -222,21 +257,21 @@ address {
 
 
 /* projects */
-.projects>article:first-child .project-img {
+.wequiz .project-img {
     background-position: center;
     background-image: url("https://img.freepik.com/premium-vector/quiz-comic-pop-art-style-quiz-brainy-game-word-vector-illustration-design_180786-81.jpg?w=1380");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.projects>article:nth-child(2) .project-img {
+.polarcoin .project-img {
     background-position: center;
     background-image: url("https://media.istockphoto.com/id/1191414497/vector/polar-bear-black-and-white-doodle-canada-icon.jpg?s=612x612&w=0&k=20&c=BUYeulWxqXVO8ybkpbS_f27zX26OZ0G1XZIy0sHAdo4=");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.projects>article:nth-child(3) .project-img {
+.kokomon .project-img {
     background-position: center;
     background-image: url("https://www.creativefabrica.com/wp-content/uploads/2021/02/24/Easter-Simple-Icon-Egg-Graphics-8903800-2-580x387.png");
 }
