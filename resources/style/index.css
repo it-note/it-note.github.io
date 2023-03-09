@@ -132,6 +132,7 @@ hr {
 .interests>article {
     height: 20vh;
     padding: 10px;
+    margin-bottom: 10px;
     background-color: whitesmoke;
 }
 
