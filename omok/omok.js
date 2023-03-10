@@ -18,6 +18,8 @@ let timer;
 let turn = 1;
 let win = 0;
 
+let check = 0;
+
 setMap();
 function setMap() {
     const width = window.innerWidth;
@@ -97,6 +99,7 @@ function countDown() {
 }
 
 function randomMarking() {
+    let n = 0;
     while (true) {
         const y = Math.floor(Math.random() * 10);
         const x = Math.floor(Math.random() * 10);
@@ -117,14 +120,15 @@ function randomMarking() {
                 }
             } 
 
-            if(mark == 1 || count >= 1) {
+            console.log("check: ", n ++);
+
+            if (mark == 1 || count >= 1 || n == 100) {
                 block.setAttribute("style", `background-image: url('${white}')`);
                 block.classList.add(turn);
                 checkWin();
                 mark++;
                 break;
             }
-
         }
     }
 }
