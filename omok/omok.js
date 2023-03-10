@@ -4,6 +4,15 @@ const title = document.createElement("h1");
 const grid = document.createElement("div");
 const map = document.createElement("div");
 
+const resetBtn = document.createElement("button");
+resetBtn.className = "reset";
+resetBtn.innerText = "reset";
+resetBtn.addEventListener("click", e => {
+    console.log("reset");
+    location.reload();
+});
+container.append(resetBtn);
+
 const size = 10;
 const [black, white] = [
     "https://em-content.zobj.net/thumbs/240/facebook/65/medium-black-circle_26ab.png",
@@ -15,10 +24,11 @@ let mark = 0;
 let sec;
 let timer;
 
-let turn = 1;
+let turn = 2;
 let win = 0;
 
-let check = 0;
+let y = 0;
+let x = 0;
 
 setMap();
 function setMap() {
@@ -68,6 +78,8 @@ function setMap() {
     }
     container.append(map);
     setPosition();
+    
+    randomMarking();
 }
 
 function checkWin() {
@@ -75,9 +87,13 @@ function checkWin() {
 
     if (win !== 0) {
         alert(`${win === 1 ? "You" : "AI"} WIN!`);
+        resetBtn.style.color = "whitesmoke";
+        resetBtn.style.backgroundColor = "#E7B10A";
     }
     else if (mark === size * size) {
         alert(`Draw~`);
+        resetBtn.style.color = "whitesmoke";
+        resetBtn.style.backgroundColor = "#DF7857";
     }
     else {
         turn = turn == 1 ? 2 : 1;
@@ -87,49 +103,6 @@ function checkWin() {
         sec = 1;
         timer = setInterval(countDown, 1000);
 
-    }
-}
-
-function countDown() {
-    sec--;
-    if (sec <= 0) {
-        clearInterval(timer);
-        randomMarking();
-    }
-}
-
-function randomMarking() {
-    let n = 0;
-    while (true) {
-        const y = Math.floor(Math.random() * 10);
-        const x = Math.floor(Math.random() * 10);
-
-        const block = map.querySelector(`#y${y}x${x}`);
-
-        if (block.className === "block") {
-            // cross check 
-            let count = 0;
-            for (let i = -1; i <= 1; i++) {
-                const targetY = map.querySelector(`#y${y + i}x${x}`);
-                if (y + i >= 0 && y + i < size && targetY.className === `block ${turn}`) {
-                    count++;
-                }
-                const targetX = map.querySelector(`#y${y}x${x + i}`);
-                if (x + i >= 0 && x + i < size && targetX.className === `block ${turn}`) {
-                    count++;
-                }
-            } 
-
-            console.log("check: ", n ++);
-
-            if (mark == 1 || count >= 1 || n == 100) {
-                block.setAttribute("style", `background-image: url('${white}')`);
-                block.classList.add(turn);
-                checkWin();
-                mark++;
-                break;
-            }
-        }
     }
 }
 
@@ -154,6 +127,71 @@ function checkHori() {
     return 0;
 }
 
+function countDown() {
+    sec--;
+    if (sec <= 0) {
+        clearInterval(timer);
+        randomMarking();
+    }
+}
+
+function randomMarking() {
+    let n = 0;
+    while (true) {
+        const y = Math.floor(Math.random() * 10);
+        const x = Math.floor(Math.random() * 10);
+
+        const block = map.querySelector(`#y${y}x${x}`);
+
+        if (block.className === "block") {
+            let countMine = 0;
+            let countOpponent = 0;
+            for (let i = -1; i <= 1; i++) {
+
+                const targetY = map.querySelector(`#y${y + i}x${x}`);
+                if (y + i >= 0 && y + i < size) {
+                    if (targetY.className === `block ${turn}`) {
+                        countMine++;
+                    }
+                    else if (targetY.className !== "block") {
+                        countOpponent++;
+                    }
+                }
+
+                const targetX = map.querySelector(`#y${y}x${x + i}`);
+                if (x + i >= 0 && x + i < size) {
+                    if (targetX.className === `block ${turn}`) {
+                        countMine++;
+                    }
+                    else if (targetX.className !== "block") {
+                        countOpponent++;
+                    }
+                }
+
+                const targetYX = map.querySelector(`#y${y + i}x${x + i}`);
+                if (y + i >= 0 && y + i < size && x + i >= 0 && x + i < size) {
+                    if (targetX.className === `block ${turn}`) {
+                        countMine++;
+                    }
+                    else if (targetX.className !== "block") {
+                        countOpponent++;
+                    }
+                }
+            }
+
+            if (countMine >= 1 || countOpponent >= 1 || n == 100) {
+                block.setAttribute("style", `background-image: url('${white}')`);
+                block.classList.add(turn);
+                checkWin();
+                mark++;
+                break;
+            }
+
+            n++
+        }
+    }
+}
+
 function setPosition() {
     const width = window.innerWidth;
     const position = (width - 410) / 2;
@@ -161,6 +199,7 @@ function setPosition() {
     title.setAttribute("style", `top: ${20}px; left: ${position + 178}px;`);
     grid.setAttribute("style", `top: ${120}px; left: ${position}px;`);
     map.setAttribute("style", `top: ${120 + 19}px; left: ${position + 19}px;`);
+    resetBtn.setAttribute("style", `top: ${560}px; left: ${position + 178}px;`);
 
 }
 
