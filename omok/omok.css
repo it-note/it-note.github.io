@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    font-family: 'Hi Melody', cursive;
+}
+
+h1 {
+    position: absolute;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.map {
+    position: absolute;
+    z-index: 1;
+    margin: auto;
+}
+
+.grid {
+    position: absolute;
+    margin: auto;
+    border-top: 1px dashed grey;
+    border-left: 1px dashed grey;
+}
+
+.line {
+    display: flex;
+}
+
+.block {
+    width: 36px;
+    height: 36px;
+}
+
+.map .block {
+    border-radius: 18px;
+    border-right: solid 1px #FFF;
+    border-bottom: solid 1px #FFF;
+    
+    background-size: 70%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.map .block:hover {
+    cursor: pointer;
+    background-color: rgba(236, 242, 255, .8);
+}
+
+.grid .block {
+    border-right: 1px dashed grey;
+    border-bottom: 1px dashed grey;
+}
