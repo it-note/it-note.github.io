@@ -122,3 +122,14 @@ const momentum = new Project(
 );
 
 addProject(momentum, "frontend", "cover", "");
+
+const omok = new Project(
+    "/omok",
+    "resources/images/omok.png",
+    "Omok",
+    "Omok board game",
+    ['VanilaJS'],
+    ['2023.03.01', "2023.03.03"]
+);
+
+addProject(momentum, "frontend", "cover", "");
