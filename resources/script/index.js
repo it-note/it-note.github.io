@@ -132,4 +132,4 @@ const omok = new Project(
     ['2023.03.01', "2023.03.03"]
 );
 
-addProject(momentum, "frontend", "cover", "");
+addProject(omok, "frontend", "cover", "");
