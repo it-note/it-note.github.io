@@ -83,7 +83,10 @@ function setMap() {
 }
 
 function checkWin() {
-    win = win == 0 ? checkHori() : win;
+    win = win === 0 ? checkHori() : win;
+    win = win === 0 ? checkVerti() : win;
+    win = win === 0 ? checkDiag() : win;
+    win = win == 0 ? checkReverse() : win;
 
     if (win !== 0) {
         alert(`${win === 1 ? "You" : "AI"} WIN!`);
@@ -118,7 +121,72 @@ function checkHori() {
                         count++;
                     }
                 }
-                if (count == 5) {
+                if (count === 5) {
+                    return turn;
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+function checkVerti() {
+    for (let i = 0; i < size; i++) {
+        for (let j = 0; j < size - 4; j++) {
+            const block = document.querySelector(`#y${j}x${i}`);
+            if (block.className === `block ${turn}`) {
+                let count = 0;
+                for (let k = 0; k < 5; k++) {
+                    const target = map.querySelector(`#y${j + k}x${i}`);
+                    if (target.className === `block ${turn}`) {
+                        count++;
+                    }
+                }
+                if (count === 5) {
+                    return turn;
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+function checkDiag() {
+    for(let i=0; i<size -4; i++) {
+        for(let j=0; j<size -4; j++) {
+            const block = document.querySelector(`#y${i}x${j}`);
+
+            if (block.className === `block ${turn}`) {
+                let count = 0;
+                for (let k = 0; k < 5; k++) {
+                    const target = map.querySelector(`#y${i + k}x${j + k}`);
+                    if (target.className === `block ${turn}`) {
+                        count++;
+                    }
+                }
+                if (count === 5) {
+                    return turn;
+                }
+            }
+        }
+    }
+    return 0;
+}
+
+function checkReverse() {
+    for (let i = 4; i < size; i++) {
+        for (let j = 0; j < size - 4; j++) {
+            const block = document.querySelector(`#y${i}x${j}`);
+
+            if (block.className === `block ${turn}`) {
+                let count = 0;
+                for (let k = 0; k < 5; k++) {
+                    const target = map.querySelector(`#y${i - k}x${j + k}`);
+                    if (target.className === `block ${turn}`) {
+                        count++;
+                    }
+                }
+                if (count === 5) {
                     return turn;
                 }
             }
