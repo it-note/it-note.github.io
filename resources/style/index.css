@@ -46,7 +46,9 @@ section::-webkit-scrollbar {
     background-color: whitesmoke;
 }
 
-.projects div {
+.projects div.backend, 
+.projects div.frontend 
+{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -77,6 +79,7 @@ hr {
     height: 25px;
     overflow-x: scroll;
     overflow-y: hidden;
+    white-space: nowrap;
 }
 
 .projects article>h3::-webkit-scrollbar,
@@ -98,11 +101,6 @@ hr {
 
 .projects article:hover .project-img {
     filter: grayscale(0);
-}
-
-.skills {
-    display: flex;
-    align-items: center;
 }
 
 .skills>span {

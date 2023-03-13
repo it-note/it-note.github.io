@@ -101,15 +101,24 @@ const sample = new Project(
 addProject(sample, "frontend", "cover", "center");
 */
 
+const bookSearch = new Project(
+    "/book-search",
+    "https://em-content.zobj.net/thumbs/240/facebook/65/left-pointing-magnifying-glass_1f50d.png",
+    "Book Search",
+    "Book Search and Inquiry Service",
+    ['VanilaJS', 'jQeury', 'Kakao Search API'],
+    ['2023.03.13', "2023.03.13"]
+);
+
+addProject(bookSearch, "frontend", "contain", "center");
+
 const momentum = new Project(
     "/momentum",
     "https://images.pexels.com/photos/2662116/pexels-photo-2662116.jpeg",
     "Momentum",
     "Live Clock and Today's To do",
-    ['VanilaJS','Weather API'],
+    ['VanilaJS', 'Weather API'],
     ['2023.03.01', "2023.03.03"]
 );
 
 addProject(momentum, "frontend", "cover", "");
-
-
