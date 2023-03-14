@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Dongle', sans-serif;
+}
+
+div {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+h1 {
+    color: #dd342d;
+    font-size: 3em;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 5%;
+    margin-bottom: 5px;
+}
+
+#map {
+    width: 70vw;
+    height: 70vw;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.row>div {
+    width: 7vw;
+    height: 7vw;
+}
+
+.block {
+    background-image: url("images/grass.jpg");
+}
+
+.player {
+    background-image: url("images/bazzi.jpg");
+}
+
+.bomb {
+    background-image: url("images/bomb.jpg");
+}
+
+.brick {
+    background-image: url("images/brick.jpeg");
+}
+
+.item {
+    background-image: url("images/item.jpg");
+}
+
+.water {
+    background-image: url("images/water.png");
+}
