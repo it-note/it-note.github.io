@@ -24,7 +24,9 @@ h1 {
 #map {
     width: 70vw;
     height: 70vw;
+    padding: 7px;
     margin: auto;
+    border: dotted 2px #dd342d;
 }
 
 .row {
