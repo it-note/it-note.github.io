@@ -19,7 +19,7 @@
   - HTML5
   - CSS3
   - AWS
-  - Git
+  - Git/Github
 
 - **Projects**
   - [위퀴즈 (WeQuiz)](https://papago.naver.com/) - Organizes parties, quizzes, and shares

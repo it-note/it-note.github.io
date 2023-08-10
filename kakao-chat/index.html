@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="abount:blank">
+
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/2.3.0/kakao.min.js"
+        integrity="sha384-70k0rrouSYPWJt7q9rSTKpiTfX6USlMYjZUtr1Du+9o4cGvhPAWxngdtVZDdErlh"
+        crossOrigin="anonymous"></script>
+    <script src="script/kakao-msg.js"></script>
+    <title>채팅 시작하기</title>
+</head>
+
+<body>
+    <script>
+        Kakao.init("a84a032e88e9cf5b37325b41709a938a");
+
+        function chatChannel() {
+            Kakao.Channel.chat({
+                channelPublicId: '_vyHxhG',
+            });
+        }
+
+        chatChannel();
+        location.href = "https://github.com/bonni-e";
+
+    </script>
+</body>
+
+</html>
